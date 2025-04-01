@@ -176,6 +176,15 @@ print("my", "name", "is", "Miro", separator: "___")
 // 출력: my___name___is___Miro
 ```
 
+**String 문자열 대/소문자 변경하기**
+```swift
+let americano = "AmerICaNo"
+print(americano.lowercased()) // "americano"
+print(americano.uppercased()) // "AMERICANO"
+
+// lowercased()와 uppercased() 모두 시간 복잡도는 O(n)이다.
+```
+
 **for문과 stirde 함수 같이 사용**
 ```swift
 let input = Int(readLine()!)!
