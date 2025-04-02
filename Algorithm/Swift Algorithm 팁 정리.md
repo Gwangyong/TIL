@@ -176,12 +176,26 @@ print("my", "name", "is", "Miro", separator: "___")
 // 출력: my___name___is___Miro
 ```
 
-**String 문자열 대/소문자 변경하기**
+**대/소문자 구별**
+```swift
+let x = "x" as Character
+let y = "Y" as Character
+
+print(x.isLowercase) // true
+print(x.isUppercase) // false
+
+print(y.isLowercase) // false
+print(y.isUppercase) // true
+// 두 메서드 모두 Bool을 반환한다.
+```
+
+**대/소문자 변경**
 ```swift
 let americano = "AmerICaNo"
-print(americano.lowercased()) // "americano"
-print(americano.uppercased()) // "AMERICANO"
+print(americano.lowercased()) // "americano" (소문자로 변환)
+print(americano.uppercased()) // "AMERICANO" (대문자로 변환)
 
+// 두 메서드 모두 String을 반환한다.
 // lowercased()와 uppercased() 모두 시간 복잡도는 O(n)이다.
 ```
 
