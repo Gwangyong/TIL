@@ -199,6 +199,38 @@ print(americano.uppercased()) // "AMERICANO" (대문자로 변환)
 // lowercased()와 uppercased() 모두 시간 복잡도는 O(n)이다.
 ```
 
+**joined() 메서드를 사용한 값 합치기**
+- joined()메서드는 배열 안의 시퀀스(배열, 문자열 등)를 하나로 이어 붙인다. 
+```swift
+let words = ["Hello", "World"]
+let result = words.joined()
+print(result) // HelloWorld
+```
+
+```swift
+// separator(구분자)를 넣는 방법도 있다.
+let words = ["Hello", "World"]
+let result = words.joined(separator: "-")
+print(result) // Hello-World
+```
+
+```swift
+// 2차원 배열을 1차원 배열로 평평하게 만들기
+let numbers = [[1, 2], [3, 4], [5, 6]]
+let flattened = numbers.joined()
+print(Array(flattened))  // [1, 2, 3, 4, 5, 6]
+```
+
+- 프로그래머스 문제 풀면서 작성한 코드 (arr 원소들을 순서대로 이어붙인 문자열로 만들기)
+```swift
+func solution(_ arr:[String]) -> String {
+    return arr.joined()
+}
+
+print(solution(["a", "b", "c"]))
+// 출력 : abc
+```
+
 **for문과 stirde 함수 같이 사용**
 ```swift
 let input = Int(readLine()!)!
