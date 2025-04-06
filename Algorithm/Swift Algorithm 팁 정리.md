@@ -127,6 +127,82 @@ array.reduce(0, +) // 숫자 합이 나타남. 문자열 합치기도 가능
 ```
 [고차함수 자세히 정리](https://jud00.tistory.com/entry/%EC%98%A4%EB%8A%98%EC%9D%98-Swift-%EC%A7%80%EC%8B%9D-%EA%B3%A0%EC%B0%A8-%ED%95%A8%EC%88%98-map-filter-reduce?category=1010119)
 
+
+## joined() 메서드를 사용한 값 합치기
+- joined()메서드는 배열 안의 시퀀스(배열, 문자열 등)를 하나로 이어 붙인다. 
+```swift
+let words = ["Hello", "World"]
+let result = words.joined()
+print(result) // HelloWorld
+```
+
+```swift
+// separator(구분자)를 넣는 방법도 있다.
+let words = ["Hello", "World"]
+let result = words.joined(separator: "-")
+print(result) // Hello-World
+```
+
+```swift
+// 2차원 배열을 1차원 배열로 평평하게 만들기
+let numbers = [[1, 2], [3, 4], [5, 6]]
+let flattened = numbers.joined()
+print(Array(flattened))  // [1, 2, 3, 4, 5, 6]
+```
+
+- 프로그래머스 문제 풀면서 작성한 코드 (arr 원소들을 순서대로 이어붙인 문자열로 만들기)
+```swift
+func solution(_ arr:[String]) -> String {
+    return arr.joined()
+}
+
+print(solution(["a", "b", "c"]))
+// 출력 : abc
+```
+
+## max(), min() 함수
+
+- max() : 전달인자 중 가장 큰 값을 반환함
+- 만약 동일한 값이라면 제일 마지막 값을 반환함
+- 반환 값은 옵셔널 요소이며, 값이 없다면 nil을 반환함
+```swift
+let heights = [67.5, 65.7, 64.3, 61.1, 58.5, 60.3, 64.9]
+let greatestHeight = heights.max()
+print(greatestHeight)
+// Prints "Optional(67.5)"
+```
+
+```swift
+// 값 비교에도 사용 가능 max(_:_:)
+let a = 100
+let b = 20
+
+let bigger = max(a, b)
+print("더 큰 값은:", bigger) // 더 큰 값은: 100
+
+```
+
+<br>
+
+- min() : 전달인자 중 가장 작은 값을 반환함
+- 만약 동일한 값이라면 제일 처음의 값을 반환함
+- 동일하게 반환 값은 옵셔널 요소이며, 값이 없다면 nil을 반환함
+```swift
+let heights = [67.5, 65.7, 64.3, 61.1, 58.5, 60.3, 64.9]
+let lowestHeight = heights.min()
+print(lowestHeight)
+// Prints "Optional(58.5)"
+```
+
+```swift
+// 값 비교에도 사용 가능 min(_:_:)
+let a = 100
+let b = 20
+
+let smaller = min(a, b)
+print("더 작은 값은:", smaller) // 더 작은 값은: 20
+```
+
 <br>
 
 ## ETC!
@@ -197,38 +273,6 @@ print(americano.uppercased()) // "AMERICANO" (대문자로 변환)
 
 // 두 메서드 모두 String을 반환한다.
 // lowercased()와 uppercased() 모두 시간 복잡도는 O(n)이다.
-```
-
-**joined() 메서드를 사용한 값 합치기**
-- joined()메서드는 배열 안의 시퀀스(배열, 문자열 등)를 하나로 이어 붙인다. 
-```swift
-let words = ["Hello", "World"]
-let result = words.joined()
-print(result) // HelloWorld
-```
-
-```swift
-// separator(구분자)를 넣는 방법도 있다.
-let words = ["Hello", "World"]
-let result = words.joined(separator: "-")
-print(result) // Hello-World
-```
-
-```swift
-// 2차원 배열을 1차원 배열로 평평하게 만들기
-let numbers = [[1, 2], [3, 4], [5, 6]]
-let flattened = numbers.joined()
-print(Array(flattened))  // [1, 2, 3, 4, 5, 6]
-```
-
-- 프로그래머스 문제 풀면서 작성한 코드 (arr 원소들을 순서대로 이어붙인 문자열로 만들기)
-```swift
-func solution(_ arr:[String]) -> String {
-    return arr.joined()
-}
-
-print(solution(["a", "b", "c"]))
-// 출력 : abc
 ```
 
 **for문과 stirde 함수 같이 사용**
