@@ -205,6 +205,19 @@ print("더 작은 값은:", smaller) // 더 작은 값은: 20
 
 <br>
 
+## 배수인지 확인하는 메서드 isMultiple(of: )
+- 주어진 값이 배수인지의 여부를 반환한다.
+- Bool 타입으로 반환함.
+```swift
+let number = 10
+if number.isMultiple(of: 2) {
+    print("\(number) is a multiple of 2")
+}
+```
+
+
+<br>
+
 ## ETC!
 
 **무한 루프**
