@@ -64,6 +64,9 @@ default:
 
 ## where문 
 - where문의 추가로 더욱 세부화 가능
+- where문은 switch, for문, case문 등에서 사용됨
+- 기본 패턴에 `추가 조건`을 걸 수 있도록 도와줌
+- switch 문에서 같은 패턴이지만 조건만 다르게 분기를 주고 싶을때 사용하면 좋다.
 
 ```swift
 // where문 예시
