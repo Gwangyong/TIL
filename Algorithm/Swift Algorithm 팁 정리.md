@@ -215,6 +215,14 @@ if number.isMultiple(of: 2) {
 }
 ```
 
+- isMultiple(of: ) 메서드로 짝수, 홀수도 구분이 가능하다.
+```swift
+number.isMultiple(of: 2) // true이면 짝수.
+
+!number.isMultiple(of: 2) // true이면 홀수.
+// 맨 위의 코드가 짝수이니, !는 부정이므로, 홀수를 찾는 코드이다.
+```
+
 
 <br>
 
