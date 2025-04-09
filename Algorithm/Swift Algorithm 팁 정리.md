@@ -296,6 +296,19 @@ print(americano.uppercased()) // "AMERICANO" (대문자로 변환)
 // lowercased()와 uppercased() 모두 시간 복잡도는 O(n)이다.
 ```
 
+**제곱 쉽게 구하기(pow)**
+- `pow(_:_:)`는 **Double 타입을 인자로 받는 함수**이다.
+- Swift 표준 라이브러리에는 포함되어 있지않고, Foundation 프레임워크에 정의되어 있으므로 `import Foundation`이 필요하다.
+- Int 타입에는 직접 사용할 수 없으며, 필요하다면 Double로 형 변환해야한다.
+-  Float 타입을 사용하고 싶다면, powf(_:_:)를 사용해야한다.
+
+```swift
+import Foundation
+
+var number: Double = 2.0
+print(pow(number, 3)) // 8.0 -> (2의 3제곱)
+```
+
 **for문과 stirde 함수 같이 사용**
 ```swift
 let input = Int(readLine()!)!
