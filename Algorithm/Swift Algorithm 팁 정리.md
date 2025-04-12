@@ -42,13 +42,13 @@ var nums = readLine()!.components(seperatedBy: " ") // ["1", "2", "3", "4"]
 
 ## N개의 줄만큼 입력받기
 ```swift
-var N = Int(readLine()!)!
+var n = Int(readLine()!)!
 var lines = [Int]()
-for _ in 0..<N { lines.append(Int(readLine()!)!) }
+for _ in 0..<n { lines.append(Int(readLine()!)!) }
 
 print(lines)
 // 입력
-// 4 (N개의 줄)
+// 4 (n개의 줄)
 // 5
 // 7
 // 2
