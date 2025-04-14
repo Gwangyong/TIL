@@ -82,9 +82,9 @@ print("Done!")
 
 ### 오름차순/내림차순 정렬
 - 기본으로는 `sort(by: <)`의 형태이다.
-- `sort(by: <)는 오름차순 정렬`이며, Swift의 기본 정렬 기준이 오름차순(<)이기 때문에 `sort()`로 생략하여 사용이 가능하다.
-- `sort(by: >)는 내림차순 정렬`이며, 기본 정렬 기준이 아니기 때문에 ()안에 `by: >`를 반드시 명시해야한다.
-- 원본 배열을 변경하는데, `sorted()`를 사용하면 복사본을 반환하게된다,
+- `sort(by: <)`는 오름차순 정렬이며, Swift의 기본 정렬 기준이 오름차순(<)이기 때문에 `sort()`로 생략하여 사용이 가능하다.
+- `sort(by: >)`는 내림차순 정렬이며, 기본 정렬 기준이 아니기 때문에 ()안에 `by: >`를 반드시 명시해야한다.
+- 원본 배열을 변경하는데, `sorted()`를 사용하면 복사본을 반환하게 된다,
 ```swift
 // sort() 예시
 var a = [5, 1, 4, 2, 3]
@@ -116,13 +116,14 @@ print(sortedArr) // [5, 4, 3, 2, 1]
 ### 배열 뒤집기
 - `reverse()`, `reversed()`를 사용하여 배열을 뒤집음
 - `reverse()`는 반환값이 없고, 원본 배열을 직접 뒤집는다.
-- 원본 배열을 변경하지 않고, 뒤집힌 복사본을 반환하려면 `reversed()`를 사용하면된다.
+- 원본 배열을 변경하지 않고, 뒤집힌 복사본을 반환하려면 `reversed()`를 사용하면 된다.
+
 ```swift
 // reverse() 예시
 var arr = [1, 2, 3, 4]
 arr.reverse()
 print(arr) // [4, 3, 2, 1]
-// reverse()는 반환값이 없기에, let result = arr.reverse()를 작성하게되면
+// reverse()는 반환값이 없기에, let result = arr.reverse()를 작성하게 되면
 // print(result)로 출력하면 결과로 Void 값인 ()만 출력된다.
 ```
 
@@ -137,7 +138,8 @@ print(Array(reversedArr)) // [4, 3, 2, 1]
 
 
 ### joined() 메서드를 사용한 값 합치기
-- joined()메서드는 배열 안의 시퀀스(배열, 문자열 등)를 하나로 이어 붙인다. 
+- joined() 메서드는 배열 안의 시퀀스(문자열, 배열 등)를 하나로 이어 붙인다. 
+
 ```swift
 let words = ["Hello", "World"]
 let result = words.joined()
@@ -145,20 +147,20 @@ print(result) // HelloWorld
 ```
 
 ```swift
-// separator(구분자)를 넣는 방법도 있다.
+// separator(구분자)를 지정하면 원하는 문자열로 연결할 수 있다.
 let words = ["Hello", "World"]
 let result = words.joined(separator: "-")
 print(result) // Hello-World
 ```
 
 ```swift
-// 2차원 배열을 1차원 배열로 평평하게 만들기
+// 2차원 배열을 1차원 배열로 펼치기
 let numbers = [[1, 2], [3, 4], [5, 6]]
 let flattened = numbers.joined()
 print(Array(flattened))  // [1, 2, 3, 4, 5, 6]
 ```
 
-- 프로그래머스 문제 풀면서 작성한 코드 (arr 원소들을 순서대로 이어붙인 문자열로 만들기)
+> 문자열 배열의 모든 원소를 순서대로 이어붙인 결과를 반환하는 코드 (프로그래머스 문제 예시)
 ```swift
 func solution(_ arr:[String]) -> String {
     return arr.joined()
@@ -171,21 +173,24 @@ print(solution(["a", "b", "c"]))
 ## 수학 관련 (Math)
 
 ### 절대값 변환
+
 ```swift
 abs(-31) // 31
 abs(31) // 31
 ```
 
 ### max(), min() 함수
+- max(): 전달인자 중 가장 큰 값을 옵셔널로 반환함
+- min(): 전달인자 중 가장 작은 값을 옵셔널로 반환함
+- max(_:_:), min(_:_:)는 두 값을 비교할 때 사용하는 전역 함수이며, 반환값은 옵셔널이 아니다.
 
-- max() : 전달인자 중 가장 큰 값을 반환함
-- 만약 동일한 값이라면 제일 마지막 값을 반환함
-- 반환 값은 옵셔널 요소이며, 값이 없다면 nil을 반환함
 ```swift
 let heights = [67.5, 65.7, 64.3, 61.1, 58.5, 60.3, 64.9]
-let greatestHeight = heights.max()
-print(greatestHeight)
-// Prints "Optional(67.5)"
+let greatestHeight = heights.max()!
+print(greatestHeight) // 67.5
+
+let smallestHeight = heights.min()!
+print(smallestHeight) // 58.5
 ```
 
 ```swift
@@ -196,14 +201,17 @@ let b = 20
 let bigger = max(a, b)
 print("더 큰 값은:", bigger) // 더 큰 값은: 100
 
+// min(_:_:)
+let smaller = min(a, b)
+print("더 작은 값은:", smaller) // 더 작은 값은: 20
 ```
 
 
 ### 제곱 쉽게 구하기(pow)
 - `pow(_:_:)`는 **Double 타입을 인자로 받는 함수**이다.
-- Swift 표준 라이브러리에는 포함되어 있지않고, Foundation 프레임워크에 정의되어 있으므로 `import Foundation`이 필요하다.
-- Int 타입에는 직접 사용할 수 없으며, 필요하다면 Double로 형 변환해야한다.
--  Float 타입을 사용하고 싶다면, powf(_:_:)를 사용해야한다.
+- pow(_:_:)는 Foundation 프레임워크에 정의되어 있는 함수이므로, 사용하려면 `import Foundation`이 필요하다
+- Int 타입에는 직접 사용할 수 없으며, 필요하다면 Double로 형 변환해야 한다.
+- Float 타입을 사용하고 싶다면, powf(_:_:)를 사용해야 한다.
 
 ```swift
 import Foundation
@@ -213,10 +221,8 @@ print(pow(number, 3)) // 8.0 -> (2의 3제곱)
 ```
 
 
-
 ### 배수인지 확인하는 메서드 isMultiple(of: )
-- 주어진 값이 배수인지의 여부를 반환한다.
-- Bool 타입으로 반환함.
+- 해당 값이 주어진 수의 배수인지 여부를 Bool로 반환한다.
 ```swift
 let number = 10
 if number.isMultiple(of: 2) {
@@ -224,35 +230,46 @@ if number.isMultiple(of: 2) {
 }
 ```
 
-- isMultiple(of: ) 메서드로 짝수, 홀수도 구분이 가능하다.
+- isMultiple(of: ) 메서드로 짝수와 홀수를 구분할 수 있다.
 ```swift
-number.isMultiple(of: 2) // true이면 짝수.
+// 짝수인지 확인
+number.isMultiple(of: 2) // true
 
-!number.isMultiple(of: 2) // true이면 홀수.
-// 맨 위의 코드가 짝수이니, !는 부정이므로, 홀수를 찾는 코드이다.
+// 홀수인지 확인(느낌표)
+!number.isMultiple(of: 2) // true
 ```
 
 
-### for문과 stride 함수 같이 사용 
+### stride()
+- stride()는 숫자 범위를 일정한 간격으로 순회할 수 있도록 도와주는 함수이다.
+- `stride(from:to:by:)`와 `stride(from:through:by:)` 두 가지 형태가 있다.
+- `from`(시작 값)부터 `to`(도착 전 값) 또는 `through`(도착 값)까지 `by`(증가 또는 감소 간격)만큼 진행한다.
+- `to`는 **끝 값을 포함하지 않으며**, `through`는 **끝 값을 포함한다**.
+
+> for문과 stride 함수 같이 사용 
 ```swift
 let input = Int(readLine()!)!
 
-// stride(from:to:by:)
-for i in stride(from: input, to: 0, by: -1) {
+// stride(from:to:by:) -> 0은 포함되지 않음
+for i in stride(from: input, to: 0, by: -1) { 
     print(i, terminator: " ")
 }
-// 입력(input): 5일 경우
-// 출력 : 5 4 3 2 1
+// 입력: 5 -> 출력: 5 4 3 2 1
 
-// stride(from:through:by:)
-for i in stride(from: input, through: 0, by: -1) {
+// stride(from:through:by:) -> 0까지 포함
+for i in stride(from: input, through: 0, by: -1) { 
     print(i, terminator: " ")
 }
-// 입력(input): 5일 경우
-// 출력: 5 4 3 2 1 0
+// 입력: 5 -> 출력: 5 4 3 2 1 0
 ```
 
-위 아래의 차이는, **to이냐 through이냐의 차이**점이다. 자세한 내용을 알고싶다면, [stride 함수](https://jud00.tistory.com/entry/%EC%98%A4%EB%8A%98%EC%9D%98-Swift-%EC%A7%80%EC%8B%9D-stride-%ED%95%A8%EC%88%98-%EB%B0%B1%EC%A4%80-2742%EB%B2%88-%EA%B8%B0%EC%B0%8D-N-%EC%97%AD%EC%88%98-%EA%B5%AC%ED%95%98%EA%B8%B0?category=1010119)을 보자.
+위 아래의 차이는, **to이냐 through이냐의 차이**점이다. 자세한 내용을 알고 싶다면, [stride 함수](https://jud00.tistory.com/entry/%EC%98%A4%EB%8A%98%EC%9D%98-Swift-%EC%A7%80%EC%8B%9D-stride-%ED%95%A8%EC%88%98-%EB%B0%B1%EC%A4%80-2742%EB%B2%88-%EA%B8%B0%EC%B0%8D-N-%EC%97%AD%EC%88%98-%EA%B5%AC%ED%95%98%EA%B8%B0?category=1010119)를 보자.
+
+
+
+
+
+
 
 ## 반복문 (Loops)
 - forEach
