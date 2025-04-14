@@ -37,11 +37,13 @@ components()를 사용할 경우에는 Foundation을 import 해주어야 하지
 
 ### N개의 줄만큼 입력받기
 ```swift
-var n = Int(readLine()!)!
-var lines = [Int]()
-for _ in 0..<n { lines.append(Int(readLine()!)!) }
+let line = Int(readLine()!)!
+var result: [Int] = []
 
-print(lines)
+for _ in 0..<line { result.append(Int(readLine()!)!) }
+
+print(result)
+
 // 입력
 // 4 (n개의 줄)
 // 5
@@ -49,7 +51,8 @@ print(lines)
 // 2
 // 9
 
-// 출력 : [5, 7, 2, 9]
+// 출력
+// [5, 7, 2, 9]
 ```
 
 
@@ -75,7 +78,62 @@ print("Done!")
 
 
 ## 배열 관련(Array)
-- sort, reverse
+
+
+### 오름차순/내림차순 정렬
+- 기본으로는 `sort(by: <)`의 형태이다.
+- `sort(by: <)는 오름차순 정렬`이며, Swift의 기본 정렬 기준이 오름차순(<)이기 때문에 `sort()`로 생략하여 사용이 가능하다.
+- `sort(by: >)는 내림차순 정렬`이며, 기본 정렬 기준이 아니기 때문에 ()안에 `by: >`를 반드시 명시해야한다.
+- 원본 배열을 변경하는데, `sorted()`를 사용하면 복사본을 반환하게된다,
+```swift
+// sort() 예시
+var a = [5, 1, 4, 2, 3]
+
+a.sort()
+print(a) // [1, 2, 3, 4, 5] - 생략된 오름차순
+
+a.sort(by: <)
+print(a) // [1, 2, 3, 4, 5] - 명시된 오름차순
+
+a.sort(by: >)
+print(a) // [5, 4, 3, 2, 1] - 명시된 내림차순 (생략 불가)
+```
+
+```swift
+// sorted() 예시
+var b = [5, 1, 4, 2, 3]
+
+let sortedArr = b.sorted() // 생략된 오름차순 복사본
+print(sortedArr) // [1, 2, 3, 4, 5]
+
+let sortedArr = b.sorted(by: <) // 명시된 오름차순 복사본
+print(sortedArr) // [1, 2, 3, 4, 5]
+
+let sortedArr = b.sorted(by: >) // 명시된 내림차순 복사본 (생략 불가)
+print(sortedArr) // [5, 4, 3, 2, 1]
+```
+
+### 배열 뒤집기
+- `reverse()`, `reversed()`를 사용하여 배열을 뒤집음
+- `reverse()`는 반환값이 없고, 원본 배열을 직접 뒤집는다.
+- 원본 배열을 변경하지 않고, 뒤집힌 복사본을 반환하려면 `reversed()`를 사용하면된다.
+```swift
+// reverse() 예시
+var arr = [1, 2, 3, 4]
+arr.reverse()
+print(arr) // [4, 3, 2, 1]
+// reverse()는 반환값이 없기에, let result = arr.reverse()를 작성하게되면
+// print(result)로 출력하면 결과로 Void 값인 ()만 출력된다.
+```
+
+```swift
+// reversed() 예시
+let arr = [1, 2, 3, 4]
+let reversedArr = arr.reversed()
+print(Array(reversedArr)) // [4, 3, 2, 1]
+```
+- reversed()는 `ReversedCollection<Array<Element>>` 타입을 반환함
+- 그렇기에 보통 Array()로 감싸 배열로 변환해서 사용한다.
 
 
 ### joined() 메서드를 사용한 값 합치기
