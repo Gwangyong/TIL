@@ -2,7 +2,7 @@
 
 > ✏️ 알고리즘 문제 풀이에서 자주 쓰는 Swift 문법, 메서드, 함수 정리 
 
-## 입/출력 처리 (Input / Output)
+## [입/출력 처리]
 
 
 ### 키보드 값 입력받기
@@ -77,14 +77,14 @@ print("Done!")
 
 
 
-## 배열 관련(Array)
+## [배열]
 
 
 ### 오름차순/내림차순 정렬
 - 기본으로는 `sort(by: <)`의 형태이다.
 - `sort(by: <)`는 오름차순 정렬이며, Swift의 기본 정렬 기준이 오름차순(<)이기 때문에 `sort()`로 생략하여 사용이 가능하다.
 - `sort(by: >)`는 내림차순 정렬이며, 기본 정렬 기준이 아니기 때문에 ()안에 `by: >`를 반드시 명시해야한다.
-- 원본 배열을 변경하는데, `sorted()`를 사용하면 복사본을 반환하게 된다,
+- 원본 배열을 변경하지만, `sorted()`를 사용하면 복사본을 반환한다.
 ```swift
 // sort() 예시
 var a = [5, 1, 4, 2, 3]
@@ -114,7 +114,7 @@ print(sortedArr) // [5, 4, 3, 2, 1]
 ```
 
 ### 배열 뒤집기
-- `reverse()`, `reversed()`를 사용하여 배열을 뒤집음
+- `reverse()`, `reversed()`를 사용하여 배열을 뒤집는다.
 - `reverse()`는 반환값이 없고, 원본 배열을 직접 뒤집는다.
 - 원본 배열을 변경하지 않고, 뒤집힌 복사본을 반환하려면 `reversed()`를 사용하면 된다.
 
@@ -170,7 +170,7 @@ print(solution(["a", "b", "c"]))
 // 출력 : abc
 ```
 
-## 수학 관련 (Math)
+## [수학]
 
 ### 절대값 변환
 
@@ -179,9 +179,9 @@ abs(-31) // 31
 abs(31) // 31
 ```
 
-### max(), min() 함수
-- max(): 전달인자 중 가장 큰 값을 옵셔널로 반환함
-- min(): 전달인자 중 가장 작은 값을 옵셔널로 반환함
+### max(), min() 
+- max(): 전달인자 중 가장 큰 값을 옵셔널로 반환한다.
+- min(): 전달인자 중 가장 작은 값을 옵셔널로 반환한다.
 - max(_:_:), min(_:_:)는 두 값을 비교할 때 사용하는 전역 함수이며, 반환값은 옵셔널이 아니다.
 
 ```swift
@@ -207,7 +207,7 @@ print("더 작은 값은:", smaller) // 더 작은 값은: 20
 ```
 
 
-### 제곱 쉽게 구하기(pow)
+### 제곱 계산하기 (pow)
 - `pow(_:_:)`는 **Double 타입을 인자로 받는 함수**이다.
 - pow(_:_:)는 Foundation 프레임워크에 정의되어 있는 함수이므로, 사용하려면 `import Foundation`이 필요하다
 - Int 타입에는 직접 사용할 수 없으며, 필요하다면 Double로 형 변환해야 한다.
@@ -271,16 +271,43 @@ for i in stride(from: input, through: 0, by: -1) {
 
 
 
-## 반복문 (Loops)
-- forEach
-- while
-- enumerated
+## [반복문]
 
-## 조건문 / 흐름 제어
-- guard let 
-- switch
+### forEach
+- forEach는 배열 등 컬렉션의 각 요소에 대해 순차적으로 작업을 수행할 때 사용한다.
+- 클로저 내에서 각각의 요소를 가져와 사용이 가능하다.
+- 단순한 출력이나 조건 작업 등을 수행할 때 주로 사용한다.
 
-## 고차함수
+```swift
+let numbers = [1, 2, 3, 4, 5]
+numbers.forEach { number in 
+    print("현재 숫자는 \(number)입니다.")
+}
+// 출력
+// 현재 숫자는 1입니다.
+// 현재 숫자는 2입니다.
+// 현재 숫자는 3입니다.
+// 현재 숫자는 4입니다.
+// 현재 숫자는 5입니다.
+```
+
+### enumerated()
+- 배열 등 컬렉션을 반복할 때, 인덱스와 값을 동시에 다뤄야할 경우에 사용된다.
+- 튜플 형태로 (index, element)를 반환한다.
+
+```swift
+let fruits = ["apple", "banana", "lemon"]
+for (index, fruit) in fruits.enumerated() {
+    print("\(index)번째 과일은 \(fruit)입니다.")
+}
+// 출력
+//0번째 과일은 apple입니다.
+//1번째 과일은 banana입니다.
+//2번째 과일은 lemon입니다.
+```
+
+
+## [고차함수]
 
 ### map (각 요소를 변형하기)
 ```swift
@@ -303,34 +330,46 @@ let sum = numbers.reduce(0, +) // reduce(초기값, 수식)
 print(sum) // 15
 ```
 
-- compactMap
-- flatMap
 
-## 문자열 관련
-- uppercased
-- lowercased
-- asciiValue
 
-### 대/소문자 구별
+## [문자열]
+
+
+### asciiValue (문자의 아스키 값)
+- `asciiValue`는 `Character` 타입의 문자가 아스키 값을 가지는지 확인하는 프로퍼티이다.
+- 문자가 아스키 값으로 변환될 수 있으면 해당 값을 반환하고, 불가능한 경우에는 `nil`을 반환한다.
+
 ```swift
-let x = "x" as Character
-let y = "Y" as Character
+let character: Character = "A"
+print(character.asciiValue!) // 65
+```
+
+
+### isLowercase / isUppercase (문자의 대소문자 여부 확인)
+- 각각 문자가 소문자 또는 대문자인지 확인할 수 있는 프로퍼티이다.
+- `isLowercase`: **소문자**인지 확인하는 프로퍼티. 소문자라면 true, 아니면 false
+- `isUppercase`: **대문자**인지 확인하는 프로퍼티. 대문자라면 true, 아니면 false
+- `Character` 타입에만 사용 가능하며, 문자 하나에만 적용된다. 
+
+```swift
+let x: Character = "x"
+let y: Character = "Y"
 
 print(x.isLowercase) // true
 print(x.isUppercase) // false
 
 print(y.isLowercase) // false
 print(y.isUppercase) // true
-// 두 메서드 모두 Bool을 반환한다.
 ```
 
-### 대/소문자 변경
+### lowercased() / uppercased() (문자열의 대소문자 변환)
+- 문자열 전체를 **소문자 또는 대문자로 변환**한 새 문자열을 반환한다.
+- 원본 문자열은 변하지 않고, 변환된 결과를 새로 리턴한다.
+
 ```swift
 let americano = "AmerICaNo"
 print(americano.lowercased()) // "americano" (소문자로 변환)
 print(americano.uppercased()) // "AMERICANO" (대문자로 변환)
-
-// 두 메서드 모두 String을 반환한다.
 ```
 
 
