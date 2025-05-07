@@ -1,7 +1,6 @@
 # 아키텍처를 사용하는 이유
 
-- 앱 개발에서 아키텍처를 설계하는 것은 코드의 가독성, 유지 보수성, 확장성을 높이기 위해 필수적이다.
-- MVC(Model-ViewController)와 MVVM(Model-View-ViewModel)은 iOS 개발에서 가장 많이 사용되는 아키텍처 패턴이다.
+앱을 개발할 때 아키텍처를 설계하는 이유는 코드의 가독성, 유지보수성, 그리고 향후 기능 확정을 쉽게 만들기 위해서이다. iOS에서는 대표적으로 MVC(Model-View-Controller)와 MVVM(Model-View-ViewModel) 두 가지 패턴이 많이 사용된다.
 
 
 <br>
@@ -9,7 +8,7 @@
 
 # MVC(Model-View-Controller) 
 
-> MVC는 전통적인 디자인 패턴으로, 앱의 구조를 모델(Model), 뷰(View), 컨트롤러(Controller)의 세 개의 역할로 분리한 것이다.
+> MVC는 오랫동안 사용되어 온 아키텍처 패턴으로, 앱의 구조를 모델(Model), 뷰(View), 컨트롤러(Controller)의 세 개의 역할로 분리한 것이다.
 
 ## MVC 패턴 구조
 - Model : 데이터 및 비즈니스 로직을 담당
@@ -18,11 +17,10 @@
 
 
 ## MVC 패턴 동작
-1. 사용자가 View(UI)에서 버튼을 클릭함
-2. Controller가 Model에게 데이터를 요청
-3. Model이 데이터를 가공하여 반환
-4. Controller가 결과를 View에게 전달
-5. View가 UI를 업데이트하여 사용자에게 보여줌
+1. 사용자가 UI에서 동작을 수행하면
+2. Controller가 그 요청을 받아 Model에 전달하고
+3. Model이 처리한 결과를 Controller를 통해 View에 전달하여
+4. View가 업데이트된다.
 
 ## MVC 패턴의 장/단점
 
@@ -45,7 +43,7 @@
 
 # MVVM(Model-View-ViewModel)
 
-> MVVM은 MVC의 단점을 보완하기 위해 등장한 패턴으로, 뷰(View)와 모델(Model) 사이에 뷰모델(ViewModel)을 추가하여 UI 로직을 분리한 것이다.
+> MVVM은 MVC의 복잡한 Controller 문제를 개선하기 위해 나온 구조로, View와 Model 사이에 ViewModel을 두어 UI 관련 로직을 분리한다.
 
 ## MVVM 패턴 구조
 - Model : 데이터 및 비즈니스 로직을 담당
@@ -53,11 +51,10 @@
 - ViewModel : UI와 모델을 연결하는 중간 계층, 비즈니스 로직과 UI 로직을 처리
 
 ## MVVM 패턴 동작
-1. 사용자가 View(UI)에서 메뉴 선택
-2. ViewModel이 Model에게 데이터 요청 및 처리
-3. Model이 데이터를 가공하여 변환
-4. ViewModel이 변경된 데이터를 View에 전달
-5. View가 UI를 자동 업데이트하여 사용자에게 보여줌
+1. 사용자가 UI에서 동작을 수행하면  
+2. View는 ViewModel에 데이터를 요청하고  
+3. ViewModel은 Model에 요청을 전달해 데이터를 처리하고  
+4. 처리된 데이터를 다시 View에 전달해 UI를 자동으로 갱신한다.
 
 ## MVVM 패턴의 장/단점
 - 장점
