@@ -40,8 +40,9 @@
 - 
 
 ### Swift
-
-- 
+- [Int(Character)가 안되는 이유, shuffled() 문법](Swift/2025.05.26(월)%20-%20Int(Character)가%20안되는%20이유,%20Shuffled()%20문법.md) - 🎯 **블로그 발행**
+- [컨벤션, Guard, Closure 정리](Swift/2025.05.27(화)%20-%20컨벤션,%20Guard,%20Closure.md) - 🎯 **블로그 발행**
+- [열거형과 인스턴스 프로퍼티](Swift/2025.05.28(수)%20-%20열거형,%20인스턴스%20프로퍼티.md) - 🎯 **블로그 발행**
 
 ### SwiftUI
 
@@ -55,8 +56,8 @@
 - 
 
 ### Troubleshooting
-
-- 
+- [첫 Git Conflict 경험과 해결](Troubleshooting/2025.05.22(목)%20-%20첫%20Git%20Conflict%20경험과%20해결.md) - ✅ **학습 완료**
+- [실수로 날린 커밋, reflog로 되살리기](Troubleshooting/2025.05.30(금)%20-%20실수로%20날린%20커밋,%20reflog로%20되살리기.md) - 🎯 **블로그 발행**
 
 
 
