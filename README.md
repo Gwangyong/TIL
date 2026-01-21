@@ -53,7 +53,7 @@
 
 ### Architecture
 
-- 
+- [DTO와 Domain Model 분리 구조가 필요한 이유](Architecture/DTO와%20Domain%20Model%20분리%20구조가%20필요한%20이유.md) - ✅ **학습 완료**
 
 ### Troubleshooting
 - [첫 Git Conflict 경험과 해결](Troubleshooting/2025.05.22(목)%20-%20첫%20Git%20Conflict%20경험과%20해결.md) - ✅ **학습 완료**
