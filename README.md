@@ -52,11 +52,10 @@
 - [Swift 주석 총 정리](Swift/2025.06.11(수)%20-%20Swift%20주석%20총%20정리.md) - 🎯 **블로그 발행**
 
 ### SwiftUI
-
-- 
+- [@State란?](SwiftUI/@State.md) - ✅ **학습 완료**
 
 ### iOS
-- 
+- [iOS에서 웹 페이지를 여는 3가지 방식](iOS/iOS에서%20웹%20페이지를%20여는%203가지%20방식.md) - 🎯 **블로그 발행**
 
 ### Architecture
 
@@ -70,7 +69,9 @@
 
 
 ## 📝 블로그
-완성된 글은 [제 블로그](https://jud00.tistory.com/)에서 확인하실 수 있습니다.
+완성된 글은 ~~[제 블로그](https://jud00.tistory.com/)~~ 에서 확인하실 수 있습니다.
+이전한 블로그 주소: [Velog](https://velog.io/@key4168/posts)
+
 
 
 
