@@ -37,6 +37,31 @@ struct PlayButton: View {
 
 버튼을 누르면 → `isPlaying`이 바뀌고 → `@State`라서 View가 다시 그려지고 → 버튼 텍스트가 “Play” ↔ “Pause”로 자동으로 바뀐다.
 
+> **추가예시**
+
+```swift
+struct ContentView: View {
+  @State var number = 0
+  
+  var body: some View {
+    VStack {
+      Button("버튼 뷰1: \n현재숫자: \(number) -> 다음숫자: \(number + 1)") {
+        number += 1
+      }
+      Text("텍스트뷰1: \(number)")
+      Text("텍스트뷰2: \(number)")
+      Text("텍스트뷰3: \(number)")
+    }
+  }
+}
+```
+
+<img width="203" height="153" alt="Image" src="https://github.com/user-attachments/assets/7a9a8271-0372-466c-8d54-8afae9b71439" />
+
+<img width="203" height="153" alt="Image" src="https://github.com/user-attachments/assets/12d1ef28-d678-4f2c-8162-eac14da80d89" />
+
+위처럼 number의 값이 0이었다가 Button을 누르게되면, body를 다시 계산하여 number의 값이 변경되어 사용하는 부분만 화면에서 업데이트된다.
+
 ## 정리
 
 정리하면, `@State` 변수를 보면 이렇게 읽으면 된다.
