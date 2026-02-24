@@ -53,6 +53,7 @@
 
 ### SwiftUI
 - [@State란?](SwiftUI/@State.md) - ✅ **학습 완료**
+- [@Binding이란?](SwiftUI/@Binding.md) - ✅ **학습 완료**
 
 ### iOS
 - [iOS에서 웹 페이지를 여는 3가지 방식](iOS/iOS에서%20웹%20페이지를%20여는%203가지%20방식.md) - 🎯 **블로그 발행**
