@@ -47,21 +47,21 @@
 - [Enum, compactMap, flatMap](Swift/2025.06.04(수)%20-%20Enum,%20compactMap,%20flatMap.md) - ✅ **학습 완료**
 - [enumerated() 왜 제네릭 T에서는 안될까?](Swift/2025.06.05(목)%20-%20enumerated%20왜%20제네릭%20T에서는%20안되는걸까.md) - 🎯 **블로그 발행**
 - [willSet, didSet 정리(속성 감시자)](Swift/2025.06.06(금)%20-%20willSet,%20didSet%20정리(속성%20감시자).md) - 🎯 **블로그 발행**
-- [get, set 문법](Swift/get,%20set%20문법.md) - ✅ **학습 완료**
+- [get, set 문법](Swift/2026.01.12(월)%20-%20get,%20set%20문법.md) - ✅ **학습 완료**
 - [구문 레이블(Statement Label)](Swift/2025.06.10(화)%20-%20구문%20레이블(Statement%20Label,%20outerLoop).md) - 🎯 **블로그 발행**
 - [Swift 주석 총 정리](Swift/2025.06.11(수)%20-%20Swift%20주석%20총%20정리.md) - 🎯 **블로그 발행**
 
 ### SwiftUI
-- [@State란?](SwiftUI/@State.md) - ✅ **학습 완료**
-- [@Binding이란?](SwiftUI/@Binding.md) - ✅ **학습 완료**
+- [@State란?](SwiftUI/2026.02.22(일)%20-%20@State.md) - ✅ **학습 완료**
+- [@Binding이란?](SwiftUI/2026.02.25(일)%20-%20@Binding.md) - ✅ **학습 완료**
 
 ### iOS
-- [iOS에서 웹 페이지를 여는 3가지 방식](iOS/iOS에서%20웹%20페이지를%20여는%203가지%20방식.md) - 🎯 **블로그 발행**
+- [iOS에서 웹 페이지를 여는 3가지 방식](iOS/2025.08.26(화)%20-%20iOS에서%20웹%20페이지를%20여는%203가지%20방식.md) - 🎯 **블로그 발행**
 - [iOS Auto Layout 우선순위](iOS/2025.06.24(화)%20-%20iOS%20Auto%20Layout%20우선순위%20개념%20정리.md) - 🎯 **블로그 발행**
 
 ### Architecture
 
-- [DTO와 Domain Model 분리 구조가 필요한 이유](Architecture/DTO와%20Domain%20Model%20분리%20구조가%20필요한%20이유.md) - ✅ **학습 완료**
+- [DTO와 Domain Model 분리 구조가 필요한 이유](Architecture/2026.01.21(수)%20-%20DTO와%20Domain%20Model%20분리%20구조가%20필요한%20이유.md) - ✅ **학습 완료**
 
 ### Troubleshooting
 - [첫 Git Conflict 경험과 해결](Troubleshooting/2025.05.22(목)%20-%20첫%20Git%20Conflict%20경험과%20해결.md) - ✅ **학습 완료**
