@@ -37,6 +37,7 @@
 
 ### CS
 - [이미지 포맷](CS/2025.08.21(목)%20-%20이미지%20포맷.md) - ✅ **학습 완료**
+- [[Tready] Firebase vs Supabase 비교 Baas 선택 과정](CS/2026.04.19(일)%20-%20[Tready]%20Firebase와%20Supabase%20비교%20정리.md) - ✅ **학습 완료**
 
 ### Swift
 - [Int(Character)가 안되는 이유, shuffled() 문법](Swift/2025.05.26(월)%20-%20Int(Character)가%20안되는%20이유,%20Shuffled()%20문법.md) - 🎯 **블로그 발행**
